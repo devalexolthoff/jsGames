@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=c, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas height="500" width="500" style="border: 1px solid black;" id="ctx"></canvas>
+    <script>
+        let ctx = document.getElementById('ctx').getContext('2d');
+        ctx.font = '30px Calibri';
+        ctx.fillText("Sample", 200, 100);
+        // saving the current attributes of the canvas
+        ctx.save();
+
+        ctx.fillStyle = 'pink';
+        ctx.fillRect(200, 200, 100, 100) // x and y position, width and height
+
+        ctx.restore(); // Brings the previous attributes of the canvas back from last save point
+        // ctx.fillStyle = 'black';
+        ctx.fillText("Sample", 200, 100);
+    </script>
+</body>
+
+</html>
