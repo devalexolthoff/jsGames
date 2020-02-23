@@ -14,8 +14,19 @@ height and width creates a space for you to draw anything using javascript. -->
     <canvas height="500" width="500" style="border: 1px solid black;" id="ctx"></canvas>
     <script>
         let ctx = document.getElementById('ctx').getContext('2d');
+        // Writing text and Changing font
         ctx.font = '30px Calibri';
-        ctx.fillText("Hello World", 150, 250);
+        // ctx.fillText("Hello World", 150, 250); regular
+        ctx.strokeText("Hello World", 150, 250); // outline
+
+        // This defines a line and draws the line
+        ctx.moveTo(100, 300);
+        ctx.lineTo(200, 300);
+        ctx.stroke();
+
+        // This draw a pink rectangle
+        ctx.fillStyle = 'pink';
+        ctx.fillRect(300, 400, 150, 50) // x and y position, width and height
     </script>
 </body>
 
