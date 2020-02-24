@@ -18,11 +18,30 @@
 
          let snakeBody = {
              width: 20,
-             height: 20
+             height: 20,
+             color: 'green'
          }
          let food = {
              width: 20,
-             height: 20
+             height: 20,
+             color: 'orange'
+         }
+         drawSnake = function (sb, i) {
+             ctx.save();
+             if (sb[i] === 0) {
+                 ctx.fillStyle = 'black'
+             } else {
+                 ctx.fillStyle = snakeBody.color
+             }
+             ctx.fillRect(sb.x, sb.y, snakeBody.width, snakeBody.height)
+             ctx.restore()
+         }
+         drawFood = function (f, i) {
+             ctx.save()
+             console.log(f)
+             ctx.fillStyle = food.color
+             ctx.fillRect = (f.x, f.y, food.width, food.height)
+             ctx.restore()
          }
 
          startGame = function () {
@@ -37,7 +56,9 @@
                  y: 200
              }]
              foodList = []
+             snakeList.forEach(drawSnake)
          }
+         startGame()
      </script>
  </body>
 
