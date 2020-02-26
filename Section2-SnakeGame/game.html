@@ -57,9 +57,21 @@
             ctx.fillRect = (f.x, f.y, food.width, food.height);
             ctx.restore();
         };
+        checkSnakePosition = function () {
+            if (snakeList[0].x > 500) {
+                snakeList[0].x = 0
+            } else if (snakeList[0].x < 0) {
+                snakeList[0].x = 500
+            } else if (snakeList[0].y > 500) {
+                snakeList[0].y = 0
+            } else if (snakeList[0].y < 0) {
+                snakeList[0].y = 500
+            }
+        }
         updateSnakePosition = function () {
             ctx.clearRect(0, 0, WIDTH, HEIGHT);
             snakeList.forEach(drawSnake);
+            checkSnakePositions
             updateSnakeList();
         };
         updateSnakeList = function () {
