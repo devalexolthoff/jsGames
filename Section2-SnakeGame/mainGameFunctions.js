@@ -35,10 +35,10 @@ updateSnakePosition = function () {
         });
     };
     ctx.fillText('Score: ' + score, 400,30)
-    isGameOver();
+    
     checkSnakePosition();
     updateSnakeList();
-    
+    isGameOver();
 };
 
 
@@ -59,6 +59,6 @@ startGame = function () {
     foodList = [];
     direction = 99;
     eaten = true
-    intervalVariable = setInterval(updateSnakePosition, 20);
+    running = true
+    intervalVariable = setInterval(updateSnakePosition, 20);    
 };
-startGame();

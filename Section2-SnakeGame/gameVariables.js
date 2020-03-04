@@ -1,4 +1,4 @@
-let snakeList, foodList, direction, eaten, start, intervalVariable, score;
+let snakeList, foodList, direction, eaten, start, intervalVariable, score, running=false;
 score = 0
 let snakeBody = {
     width: 20,
